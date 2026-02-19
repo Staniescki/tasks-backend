@@ -103,11 +103,14 @@ pipeline {
         }
 
         stage('Deploy Prod') {
-            steps {
-                bat 'wsl docker compose build'
-                bat 'wsl docker compose up -d'
-            }
+          steps {
+            bat '''
+              wsl bash -lc "cd /mnt/c/Users/Diego/.jenkins/workspace/Pipeline && docker compose build"
+            '''
+            bat '''
+              wsl bash -lc "cd /mnt/c/Users/Diego/.jenkins/workspace/Pipeline && docker compose up -d"
+            '''
+          }
         }
-
     }
 }
