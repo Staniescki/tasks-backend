@@ -65,7 +65,7 @@ pipeline {
                 dir('api-test') {
                     git credentialsId: 'github_login',
                         url: 'https://github.com/Staniescki/tasks-api-test'
-                    bat 'clean test'
+                    bat 'mvn test'
                 }
             }
         }
