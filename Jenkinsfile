@@ -63,6 +63,7 @@ pipeline {
         stage('API Tests') {
             steps {
                 dir('api-test') {
+					deleteDir()
                     git credentialsId: 'github_login',
                         url: 'https://github.com/Staniescki/tasks-api-test'
                     bat 'mvn test'
