@@ -22,7 +22,7 @@ pipeline {
           bat """
             "${scannerHome}\\bin\\sonar-scanner.bat" -e ^
             -Dsonar.projectKey=DeployBack ^
-            -Dsonar.host.url=http://172.26.144.1:9000 ^
+            -Dsonar.host.url=http://localhost:9000 ^
             -Dsonar.login=sqa_6c635532f25098fa5890d73fe01726c7771d6acb ^
             -Dsonar.allowPermissionManagementForProjectAdmins=true ^
             -Dsonar.java.binaries=target ^
