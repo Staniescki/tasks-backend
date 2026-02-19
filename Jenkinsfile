@@ -9,7 +9,7 @@ pipeline {
 
     stage('Unit Test') {
       steps {
-        bat 'mvn test'
+        bat 'mvn test jacoco:report'
       }
     }
 
