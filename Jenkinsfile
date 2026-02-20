@@ -107,6 +107,7 @@ pipeline {
             bat '''
                   wsl bash -lc "export BUILD_NUMBER=%BUILD_NUMBER% && docker compose down --remove-orphans || true"
                   wsl bash -lc "export BUILD_NUMBER=%BUILD_NUMBER% && docker compose up -d --build --remove-orphans"
+                  wsl bash -lc "export BUILD_NUMBER=%BUILD_NUMBER% && docker compose ps"
                 '''
           }
         }
