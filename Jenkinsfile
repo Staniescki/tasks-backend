@@ -105,12 +105,10 @@ pipeline {
         stage('Deploy Prod') {
           steps {
             bat '''
-              wsl bash -lc "cd \"$(wslpath -u 'C:\\Users\\Diego\\OneDrive\\Área de Trabalho\\curso\\tasks-backend')\" && docker compose build"
-            '''
-            bat '''
-              wsl bash -lc "cd \"$(wslpath -u 'C:\\Users\\Diego\\OneDrive\\Área de Trabalho\\curso\\tasks-backend')\" && docker compose up -d"
+              wsl bash -lc && docker compose build && docker compose up -d"
             '''
           }
         }
+
     }
 }
