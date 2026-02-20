@@ -103,11 +103,10 @@ pipeline {
         }
 
         stage('Deploy Prod') {
-          steps {
-            bat '''
-              wsl bash -lc && docker compose build && docker compose up -d"
-            '''
-          }
+           steps {
+              bat 'wsl docker compose build'
+              bat 'wsl docker compose up -d'
+           }
         }
 
     }
