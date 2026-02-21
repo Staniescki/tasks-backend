@@ -22,8 +22,8 @@ services:
     networks:
       - prod_net_back
       - prod_net_front
-    #ports:
-    #  - 9998:8080
+    ports:
+      - 9998:8080
     environment:
       - DATABASE_HOST=db
       - DATABASE_PORT=5432
